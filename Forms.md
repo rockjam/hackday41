@@ -4,13 +4,13 @@
 
 * Посмотреть как формы сделаны в яндекс деньгах
 * Понять какие элементы управления нужны нам
-		- input(data)
-		- button
-		- slider(progess(0-100), showHandle)
-		- label
-		- list(elems:List[Element], selected: Option[Int]) //Element(id, value); selected - id-шник выбранного элемента
-		- checkbox(checked: Boolean)
-		- form(inputs: List[Input])
+	- input(data)
+	- button
+	- slider(progess(0-100), showHandle)
+	- label
+	- list(elems:List[Element], selected: Option[Int]) //Element(id, value); selected - id-шник выбранного элемента
+	- checkbox(checked: Boolean)
+	- form(inputs: List[Input])
 * сделать построчное накидывание элементов. каждый элемент будет занимать одну строку
 
 Notes:
