@@ -200,7 +200,7 @@ Notes:
 	 ```
 	   Label(enabled = true, label = "hello",...)
 	 ```
-* нужно добавить у формы методы toString = write(this) и validate: String Xor Unit?
+* нужно добавить у формы методы toString = write(this) и validate: `String Xor Unit`?
 
 About form validation:
 * Формы в рамках одного бота имеют уникальное имя. 
