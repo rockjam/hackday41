@@ -68,3 +68,128 @@ sendJson(dataType = "form", JSON from string)//нужно сделать что�
 ```
 
 
+
+###Итерация №3
+* Нужно чтобы из ботов можно было создавать формочки(нужно бы запаблишить botkit)
+
+
+Все input-ы которые мы реализовали в виде json-а
+
+```
+//all kinds of inputs are here
+[
+        // ordinary text input with input type: text
+        {
+            "$type": "TextInput",
+            "enabled": true,
+            "name": "account",
+            //if label is empty - it is encoded as empty string
+            "label": "",
+            "inputType": 1,
+            "data": ""
+        },
+        // button
+        {
+            "$type": "Button",
+            "enabled": true,
+            "name": "doIt",
+            "label": "Do it!"
+        },
+        // slidebar with handle
+        {
+            "$type": "Slider",
+            "enabled": true,
+            "name": "songProgress",
+            "label": "",
+            "progress": 53,
+            "showHandle": true
+        },
+        // simple label
+        {
+            "$type": "Label",
+            "enabled": true,
+            "name": "label1",
+            "label": "This is label 1"
+        },
+        // list with elements
+        {
+            "$type": "ElementsList",
+            "enabled": true,
+            "name": "songsList",
+            "label": "Here are songs",
+            "elems": [
+                {
+                    "id": 0,
+                    "value": "When the leeve breaks"
+                },
+                {
+                    "id": 1,
+                    "value": "Lost in a supermarket"
+                },
+                {
+                    "id": 2,
+                    "value": "Holod"
+                }
+            ],
+            // selected value is -1 when there is no selected value
+            "selected": -1
+        },
+        // checkbox
+        {
+            "$type": "Checkbox",
+            "enabled": true,
+            "name": "saveTemplate",
+            "label": "Save to templates",
+            "checked": true
+        }
+    ]
+```
+
+И аналогичный код создания этих элементов на scala
+```
+    List(
+      TextInput(
+        enabled = true,
+        name = "account",
+        label = "",
+        inputType = Text.toInt,
+        data = ""
+      ),
+      Button(
+        enabled = true,
+        name = "doIt",
+        label = "Do it!"
+      ),
+      Slider(
+        enabled = true,
+        name = "songProgress",
+        label = "",
+        progress = 53,
+        showHandle = true
+      ),
+      Label(
+        enabled = true,
+        name = "label1",
+        label = "This is label 1"
+
+      ),
+      ElementsList(
+        enabled = true,
+        name = "songsList",
+        label = "Here are songs",
+        List(
+          Element(0, "When the leeve breaks"),
+          Element(1, "Lost in a supermarket"),
+          Element(2, "Holod")
+        ),
+        // none are selected
+        -1
+      ),
+      Checkbox(
+        enabled = true,
+        name = "saveTemplate",
+        label = "Save to templates",
+        checked = true
+      )
+    )
+```
